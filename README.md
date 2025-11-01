@@ -92,6 +92,7 @@ ng serve
   "rollNumber": "String (required)",
   "department": "String (optional)",
   "year": "Number (optional)",
+  "semester": "String (optional)",
   "createdAt": "Date",
   "updatedAt": "Date"
 }

@@ -13,7 +13,7 @@ import { Student } from '../../services/student';
   styleUrls: ['./student-add.component.css']
 })
 export class StudentAddComponent {
-  student: Student = { name: '', rollNumber: '', department: '', year: undefined };
+  student: Student = { name: '', rollNumber: '', department: '', year: undefined, semester: '' };
   saving = false;
   error = '';
 
@@ -45,7 +45,7 @@ export class StudentAddComponent {
   }
 
   resetForm() {
-    this.student = { name: '', rollNumber: '', department: '', year: undefined };
+    this.student = { name: '', rollNumber: '', department: '', year: undefined, semester: '' };
     this.error = '';
   }
 }

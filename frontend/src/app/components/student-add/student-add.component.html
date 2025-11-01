@@ -48,7 +48,7 @@
         [(ngModel)]="student.department" 
         name="department" 
         class="form-control"
-        placeholder="Enter department (optional)"
+        placeholder="Enter department"
         [disabled]="saving"
       />
     </div>
@@ -61,11 +61,32 @@
         [(ngModel)]="student.year" 
         name="year" 
         class="form-control"
-        placeholder="Enter year (optional)"
+        placeholder="Enter year"
         min="1"
-        max="10"
+        max="4"
         [disabled]="saving"
       />
+    </div>
+
+    <div class="form-group">
+      <label for="semester">Semester</label>
+      <select
+        id="semester"
+        [(ngModel)]="student.semester"
+        name="semester"
+        class="form-control"
+        [disabled]="saving"
+      >
+        <option value="">Select Semester</option>
+        <option value="1-1">1-1</option>
+        <option value="1-2">1-2</option>
+        <option value="2-1">2-1</option>
+        <option value="2-2">2-2</option>
+        <option value="3-1">3-1</option>
+        <option value="3-2">3-2</option>
+        <option value="4-1">4-1</option>
+        <option value="4-2">4-2</option>
+      </select>
     </div>
 
     <div class="form-actions">

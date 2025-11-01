@@ -24,6 +24,7 @@
           <th>Roll Number</th>
           <th>Department</th>
           <th>Year</th>
+          <th>Semester</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -33,6 +34,7 @@
           <td>{{ student.rollNumber }}</td>
           <td>{{ student.department || 'N/A' }}</td>
           <td>{{ student.year || 'N/A' }}</td>
+          <td>{{ student.semester || 'N/A' }}</td>
           <td class="actions">
             <button class="btn btn-secondary btn-sm" (click)="editStudent(student._id!)" title="Edit Student">
               <i class="icon-edit">✏</i> Edit

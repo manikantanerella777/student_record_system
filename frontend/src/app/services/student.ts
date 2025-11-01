@@ -8,6 +8,7 @@ export interface Student {
   rollNumber: string;
   department?: string;
   year?: number;
+  semester?: string;
 }
 
 @Injectable({

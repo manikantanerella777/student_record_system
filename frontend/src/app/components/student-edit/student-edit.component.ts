@@ -13,7 +13,7 @@ import { Student } from '../../services/student';
   styleUrls: ['./student-edit.component.css']
 })
 export class StudentEditComponent implements OnInit {
-  student: Student = { name: '', rollNumber: '', department: '', year: undefined };
+  student: Student = { name: '', rollNumber: '', department: '', year: undefined, semester: '' };
   loading = false;
   saving = false;
   error = '';
