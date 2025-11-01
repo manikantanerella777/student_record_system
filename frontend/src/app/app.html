@@ -1,0 +1,12 @@
+<div class="app-container">
+  <nav class="navbar">
+    <h1>{{title}}</h1>
+    <ul>
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Students</a></li>
+      <li><a routerLink="/add" routerLinkActive="active">Add Student</a></li>
+    </ul>
+  </nav>
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

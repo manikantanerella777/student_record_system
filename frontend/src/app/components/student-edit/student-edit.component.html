@@ -1,0 +1,83 @@
+<div class="edit-student-container">
+  <div class="header">
+    <h2>Edit Student</h2>
+    <button class="btn btn-secondary" (click)="cancel()">
+      <i class="icon-back">←</i> Back to List
+    </button>
+  </div>
+
+  <div *ngIf="loading" class="loading">
+    <div class="spinner"></div>
+    <p>Loading student data...</p>
+  </div>
+
+  <div *ngIf="error" class="error-message">
+    <i class="icon-error">⚠</i>
+    {{error}}
+  </div>
+
+  <form *ngIf="!loading && !error" (ngSubmit)="save()" class="student-form">
+    <div class="form-group">
+      <label for="name">Name *</label>
+      <input 
+        type="text" 
+        id="name"
+        [(ngModel)]="student.name" 
+        name="name" 
+        required 
+        class="form-control"
+        placeholder="Enter student name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="rollNumber">Roll Number *</label>
+      <input 
+        type="text" 
+        id="rollNumber"
+        [(ngModel)]="student.rollNumber" 
+        name="rollNumber" 
+        required 
+        class="form-control"
+        placeholder="Enter roll number"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="department">Department</label>
+      <input 
+        type="text" 
+        id="department"
+        [(ngModel)]="student.department" 
+        name="department" 
+        class="form-control"
+        placeholder="Enter department"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="year">Year</label>
+      <input 
+        type="number" 
+        id="year"
+        [(ngModel)]="student.year" 
+        name="year" 
+        class="form-control"
+        placeholder="Enter year"
+        min="1"
+        max="4"
+      />
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" [disabled]="saving" class="btn btn-primary">
+        <span *ngIf="saving" class="spinner-sm"></span>
+        <i *ngIf="!saving" class="icon-save">✓</i>
+        {{ saving ? 'Saving...' : 'Save Changes' }}
+      </button>
+      <button type="button" (click)="cancel()" class="btn btn-secondary" [disabled]="saving">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>
