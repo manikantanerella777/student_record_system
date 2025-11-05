@@ -14,7 +14,9 @@ const studentRoutes = require('./routes/student.routes');
 app.use('/api/students', studentRoutes);
 
 // Connect to MongoDB
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/studentdb';
+const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://manikantanerella003_db_user:iJVRYr1U4PCWtZPs@cluster0.x80zbep.mongodb.net/studentdb?retryWrites=true&w=majority';
+
+console.log('MONGO_URI:', MONGO_URI ? 'Set' : 'Not set');
 
 mongoose.connect(MONGO_URI)
 .then(() => console.log('✅ MongoDB connected'))
