@@ -16,7 +16,12 @@ app.use('/api/students', studentRoutes);
 // Connect to MongoDB
 const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://manikantanerella003_db_user:iJVRYr1U4PCWtZPs@cluster0.x80zbep.mongodb.net/studentdb?retryWrites=true&w=majority';
 
-console.log('MONGO_URI:', MONGO_URI ? 'Set' : 'Not set');
+if (!MONGO_URI.startsWith('mongodb')) {
+  console.error('❌ Invalid MongoDB URI format');
+  process.exit(1);
+}
+
+console.log('✅ MongoDB URI configured');
 
 mongoose.connect(MONGO_URI)
 .then(() => console.log('✅ MongoDB connected'))
